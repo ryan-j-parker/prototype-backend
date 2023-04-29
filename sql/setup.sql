@@ -2,6 +2,7 @@
 -- The SQL in this file will be executed when you run `npm run setup-db`
 DROP TABLE IF EXISTS players CASCADE;
 DROP TABLE IF EXISTS rooms CASCADE;
+DROP TABLE IF EXISTS sketchers CASCADE;
 
 CREATE TABLE players (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -12,7 +13,9 @@ CREATE TABLE players (
 
 INSERT INTO players (username, email, password_hash)
 VALUES
-('test_user', 'user@email.net', 'hunter2myhunter2');
+('test_user', 'user@email.net', 'hunter2myhunter2'),
+('test_user2', 'user@email.com', 'hunter2myhunter2'),
+('test_user3', 'user@email.org', 'hunter2myhunter2');
 
 CREATE TABLE rooms (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
